@@ -12,22 +12,22 @@ export const ReactQueryBasicStarter = () => {
     </QueryClientProvider>
   )
 }
+
 const ReactQueryExecutor = () => {
-    const { isLoading, error, data, isFetching } = useQuery("repoData", () => 
-      axios.get(
+  const { isLoading, error, data, isFetching } = useQuery("repoData", () => 
+    axios.get(
         "http://api.github.com/repos/reBerel/fastapi-for-aws-deploy-test"
-        )
-      .then((res) => res.data)
-      .catch((res) => res.data)
     )
-  
-    if (isLoading) return "로딩중 ........"
-  
-    if (error) return "에러 발생: " + error.message
-  
-    return (
-      <div>
-        <h1>{ data.name }</h1>
-      </div>
-    )
-  }
+    .then((res) => res.data)
+  )
+
+  if (isLoading) return "로딩중 ........"
+
+  if (error) return "에러 발생: " + error.message
+
+  return (
+    <div>
+      <h1>{ data.name }</h1>
+    </div>
+  )
+}

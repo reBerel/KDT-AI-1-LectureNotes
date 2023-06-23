@@ -5,12 +5,12 @@ import { BrowserRouter } from 'react-router-dom'
 // import { 'bootstrap mount 이름' } from 'remotes App 이름'/'remotes의 exposes 설정(오른쪽 이름)' 형태로 작성
 import { mount } from 'vueModuleApp/Sample';
 import { navigationMount } from 'vueNavigationApp/VueNavigation';
+
 // React Micro Frontend Apps
 // import '사용하는 함수' from 'remotes App 이름'/'remotes의 exposes 설정(오른쪽 이름)' 형태로 작성
-
 import Counter from 'reactModuleApp/Counter';
 import BoardApp from 'reactBoardApp/BoardApp'
-import TodoApp from 'reactZustandTodoApp/ZustandTodoApp'
+import TodoApp from "reactZustandTodoApp/ZustandTodoApp";
 import ReactQueryTestApp from 'reactQueryTestApp/ReactQueryTest'
 // React에 vue를 붙일 때는 실제 React와 vue의 동작이 다르기 때문에
 // React에 컴포넌트 형태로 붙이지 않고
@@ -36,16 +36,16 @@ const App = () => {
         <div ref={vueRef}/>
       </div>
       <div style={{ position: 'relative' }}>
-      <Counter/>
-      <BrowserRouter>
-        <BoardApp/>
-      </BrowserRouter>
-      </div>
-      <div  style={{ position: 'relative' }}>
+        <Counter/>
+        <BrowserRouter>
+          <BoardApp/>
+        </BrowserRouter>
+        </div>
+    <div  style={{ position: 'relative' }}>
       <TodoApp/>
       <ReactQueryTestApp/>
-      </div>
     </div>
+  </div>
   )
 };
 
