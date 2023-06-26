@@ -74,7 +74,7 @@ module.exports = (_, argv) => ({
     }),
     new VueLoaderPlugin(),
     new ModuleFederationPlugin({
-      name: "vueNavigationApp",
+      name: "vuetifyTailwindBoardApp",
       filename: "remoteEntry.js",
       exposes: {
       },
